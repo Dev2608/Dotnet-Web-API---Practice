@@ -1,0 +1,103 @@
+inherit class "AuthorizationFilterAttribute"
+in that override the method "onAuthorization()"
+
+
+in request part, from header section we get the username:password in 64 bit encoded formet.
+
+to convert from base64 to normal string we using Convert class FromBase64String() method.
+
+--------------------------------------------------
+
+4 types of authentication
+-HTTP basic authentication (UserName and Password are sent in api url)
+-API key Authentication
+-OAuth Authentication
+-No Authentication
+
+----------------------------------------------------------
+
+filters are used to provide authentication and authorization in web api.
+in application, before action method and after action method,if we wanted to perform any process then filters are used.
+
+simillar as [HttpPost] filters are.
+
+we can use custome filter in MVC.
+
+5 types of filters:
+-Authentication Filters
+-Authorization Filters
+-Action Filters
+-Result Filters
+-Exception Filters
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Authentication can be done by two types
+-Built in IIS OR asp.net OR
+-write own HTTP module for authentication.
+
+HTTP message handler:
+--> it used for write own authentication logic for authentication and it only checks for web api routes.
+
+- for self hosting use HTTP message handler
+- for not self hosting use HTTP modules.
+
+---> Meaning of setting the principal?
+-it contains associated identity obj that contains information about the user. if the user is authenticated then it returns true else returns false.
+
+- IIS (HTTP Module) ---> web api (HTTP message handler) ---> authorization (using authorization filter) ---> controller (performs actions)
+
+[Authorize] --- for authorization filter.
+[AllowAnonymous] --- for allowing anonymous users.
+[Authorize(Users="Alice,Bob")] --- for specific users 
+[Authorize(Roles="Administrators")] --- for specific roles 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+API Key Authentication
+
+- working on static key in application
+- key goes in 
+  in header
+  in query as a parameter
+  
+- In this , we first declaring one static key/password for our api and then when we get the request from the user in that we get the key also 
+  and then we are going to check that key with the predifined static key and if that matches then authorize else not autherize.
+- In this we do nt need to register anything , we just have to simply use that key and authenticate the user.
+- [ApiKeyAuth] - we can do by this.
+- we have to pass key from headers in postman and then checking for that.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+O Auth Authentication 
+
+- In basic authentication , the username and password are comes from url headers and for security reasons they are encrypted in the form of base64,
+  bu the illigle user can decode that easiy and it will be risky, 
+
+  to overcome this , nowadays we are using token based autherization scheme, OAuth Authentication 2.0.
+
+- to use this, we need to install these pkgs,
+  
+  1. Microsoft.Owin.Security.OAuth
+  2. Microsoft.Owin.Cors
+  3. Microsoft.AspNet.WebApi.Core
+  4. Microsoft.AspNet.WebApi.Owin
+
+- Token Based Authentication :-
+  Token-based authentication is a process where the client application first sends a request to Authentication server with a valid credentials. 
+  The Authentication server sends an Access token to the client as a response. This token contains enough data to identify a particular user and 
+  it has an expiry time.
+
+- cookies are harder to handle compare to token that's why they are more useful.
+
+
+
+
+
+----REFERENCE LINK---------
+https://dotnettutorials.net/lesson/token-based-authentication-web-api/

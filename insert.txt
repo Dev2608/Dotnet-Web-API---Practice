@@ -1,0 +1,85 @@
+// Insert
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult InsertStudent([FromBody] student s)
+        {
+            //DB.students.Add(s);
+            //DB.SaveChanges();
+
+            ob1.connectionTostudents();
+            ob1.connectionTofacultyDetail();
+
+            ob1.insertTostudents(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age,s.f_id);
+
+            if(s.f_id == null)
+            {
+                s.f_id = null;
+                ob1.insertTostudents(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age, s.f_id);
+            }
+            if(s.f_id != null)
+            {
+                ob1.insertTostudents(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age, s.f_id);
+                ob1.insertTofacultyDetail(s.f_id, s.s_id);
+            }
+
+            return Ok();
+        }
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Insert
+        [Route("api/studentDetail/InsertStudent")]    // to call this api using method name
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult InsertStudent([FromBody] student s)
+        {
+            //DB.students.Add(s);
+            //DB.SaveChanges();
+
+            ob1.connectionTostudents();
+            ob1.connectionTofacultyDetail();
+
+            //ob1.insertTostudents(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age,s.f_id);
+
+            if (s.f_id != null)
+            {
+                //s.f_id = null;
+                //ob1.insertTostudents(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age);
+                
+                ob1.insertTofacultyDetail(s.f_id, s.s_id);
+            }
+            
+            ob1.insertWithoutFaculty(s.s_id, s.s_name, (long)s.s_mobile, (int)s.s_age);
+            return Ok();
+        }
+
+        // insert JSON array
+        [Route("api/studentDetail/InsertMultipleStudent")]      // to call this api using method name
+        [HttpPost]
+        public IHttpActionResult InsertMultipleStudent([FromBody] student[] s)
+        {
+            int l = s.Length;
+
+            ob1.connectionTostudents();
+            ob1.connectionTofacultyDetail();
+
+            for (int i = 0; i < l; i++)
+            {
+                String ID = s[i].s_id;
+                String Name = s[i].s_name;
+                long mob = (long)s[i].s_mobile;
+                int Age = (int)s[i].s_age;
+                String F_ID = s[i].f_id;
+
+                if (s[i].f_id != null)
+                {
+                    ob1.insertTofacultyDetail(s[i].f_id, s[i].s_id);
+                }
+
+                ob1.insertWithoutFaculty(s[i].s_id, s[i].s_name, (long)s[i].s_mobile, (int)s[i].s_age);
+            }
+            return Ok();
+        }
+
+		

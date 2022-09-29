@@ -1,0 +1,6 @@
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\bin\Debug\databaseCode.dll
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\bin\Debug\databaseCode.pdb
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\obj\Debug\databaseCode.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\obj\Debug\databaseCode.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\obj\Debug\databaseCode.dll
+C:\Users\Asus\Desktop\ASP WEB API\databaseCode\obj\Debug\databaseCode.pdb

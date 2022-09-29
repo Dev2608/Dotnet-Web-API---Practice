@@ -1,0 +1,6 @@
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\bin\Debug\connection_loginRegister.dll
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\bin\Debug\connection_loginRegister.pdb
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\obj\Debug\connection_loginRegister.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\obj\Debug\connection_loginRegister.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\obj\Debug\connection_loginRegister.dll
+C:\Users\Asus\Desktop\ASP WEB API\connection_loginRegister\obj\Debug\connection_loginRegister.pdb

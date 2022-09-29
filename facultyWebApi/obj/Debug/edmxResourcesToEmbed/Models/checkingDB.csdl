@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="checkingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="facultyDetail">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="f_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="s_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="s_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="s_mobile" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="s_age" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="f_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="checkingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="facultyDetails" EntityType="Self.facultyDetail" />
+    <EntitySet Name="students" EntityType="Self.student" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="datecheckModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'datecheck.dbo.Table_1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_1">
+    <Key>
+      <PropertyRef Name="diff" />
+      <PropertyRef Name="firsttime" />
+      <PropertyRef Name="secondtime" />
+    </Key>
+    <Property Name="diff" Type="int" Nullable="false" />
+    <Property Name="firsttime" Type="datetime" Nullable="false" />
+    <Property Name="secondtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="datecheckModelStoreContainer">
+    <EntitySet Name="Table_1" EntityType="Self.Table_1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_1].[diff] AS [diff], 
+    [Table_1].[firsttime] AS [firsttime], 
+    [Table_1].[secondtime] AS [secondtime]
+    FROM [dbo].[Table_1] AS [Table_1]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

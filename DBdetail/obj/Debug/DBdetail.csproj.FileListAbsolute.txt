@@ -1,0 +1,6 @@
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\bin\Debug\DBdetail.dll
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\bin\Debug\DBdetail.pdb
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\obj\Debug\DBdetail.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\obj\Debug\DBdetail.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\obj\Debug\DBdetail.dll
+C:\Users\Asus\Desktop\ASP WEB API\DBdetail\obj\Debug\DBdetail.pdb

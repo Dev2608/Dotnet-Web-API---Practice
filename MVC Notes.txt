@@ -1,0 +1,5 @@
+M- Modal -- (Data Base Code)
+V- View  -- (Frontend GUI)
+C- Controller -- (Gives the link between Modal and View)
+
+--> The Request for the any page on the web is firstly go with the controller, then if the modal is included then controller will go with the modal and get the data and then show that data on the VIEW and if the modal is not included with the application then controller will directly go to the VIEW.

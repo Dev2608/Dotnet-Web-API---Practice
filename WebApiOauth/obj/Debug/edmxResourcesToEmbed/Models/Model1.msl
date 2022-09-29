@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newCheckingModelStoreContainer" CdmEntityContainer="newCheckingEntities">
+    <EntitySetMapping Name="facultyDetails">
+      <EntityTypeMapping TypeName="newCheckingModel.facultyDetail">
+        <MappingFragment StoreEntitySet="facultyDetail">
+          <ScalarProperty Name="f_id" ColumnName="f_id" />
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="newCheckingModel.student">
+        <MappingFragment StoreEntitySet="students">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_mobile" ColumnName="s_mobile" />
+          <ScalarProperty Name="s_age" ColumnName="s_age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loginDetails">
+      <EntityTypeMapping TypeName="newCheckingModel.loginDetail">
+        <MappingFragment StoreEntitySet="loginDetail">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
